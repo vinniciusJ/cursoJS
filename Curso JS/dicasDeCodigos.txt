@@ -1,0 +1,10 @@
+/*** Código para converter numero para representação monetária 
+
+            n1.toLocaleString('pt-BR', {style:'currency', currency: 'BRL'});
+
+***/
+
+/*** Operadores Ternários (?:) - Exemplo:
+
+            media >= 7.0 ? 'Aprovado' : 'Reprovado';
+***/
