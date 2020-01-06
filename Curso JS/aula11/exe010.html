@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> DETRAN </title>
+    <style>
+        input#iVerificar{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Sistema de multas </h1>
+    <label> Informe a sua velocidade: <input type="number" name="nVel" id="iVel"></label>
+    <input type="buttom" value="Verificar" id="iVerificar"> <br/>
+    <div id="resultado"> </div>
+    <script>
+        var velocidade = document.querySelector('input#iVel');
+        var resultado = document.querySelector('div#resultado');
+        velocidade = Number(velocidade.value);
+        
+        if(velocidade > 80){
+            
+        }
+    </script>
+</body>
+</html>
