@@ -7,22 +7,49 @@
     <title> DETRAN </title>
     <style>
         input#iVerificar{
-            width: 50px;
+            width: 60px;
+        }
+        div#resultado{
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <h1> Sistema de multas </h1>
-    <label> Informe a sua velocidade: <input type="number" name="nVel" id="iVel"></label>
-    <input type="buttom" value="Verificar" id="iVerificar"> <br/>
+    <label> Informe a sua velocidade: <input type="number" name="nVel" id="iVel"> Km/h </label>
+    <input type="button" value="Verificar" id="iVerificar"> 
     <div id="resultado"> </div>
     <script>
-        var velocidade = document.querySelector('input#iVel');
-        var resultado = document.querySelector('div#resultado');
-        velocidade = Number(velocidade.value);
-        
+    
+        var enviar = document.querySelector('input#iVerificar');
+        enviar.addEventListener('click', calcularVelocidade);
+
+        function calcularVelocidade(){
+            let velocidadeTXT = document.querySelector('input#iVel');
+            let velocidade = Number(velocidadeTXT.value);
+            let resultado = document.querySelector('div#resultado');
+
+            if(velocidade > 80){
+                resultado.innerHTML = 'Você ultrapassou a  velocidade. Status: MULTA';
+                resultado.style.background = 'red';
+                resultado.style.color = 'white';
+            }
+            else {
+                resultado.innerHTML = 'Status: SEM MULTA';
+                resultado.style.background = 'green';
+                resultado.style.color = 'white';
+            }
+        }
+
         if(velocidade > 80){
-            
+            resultado.innerHTML = 'Você ultrapassou o limite de velocidade. Status: Multa';
+            resultado.style.background = 'red';
+            resultado.style.color = 'white';
+        }
+        else{
+            resultado.innerHTML = `Status: Sem multa - Velocidade ${velocidade}`;
+            resultado.style.background = 'green';
+            resultado.style.color = 'white';
         }
     </script>
 </body>
