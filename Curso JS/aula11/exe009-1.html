@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> SGN </title>
+    <style>
+        div#resposta{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Sistema de gerenciamento de nacionalidade </h1>
+    <select id="caixa-resposta"> 
+        <option value="BR"> Brasil </option>
+        <option value="ES" selected> Outro país </option>
+    </select>
+    <label><input type="button" name="nButton" id="iButton" value="Enviar"></label><br/>
+    <div id="resposta"> </div>
+    <script>
+
+        document.querySelector('input#iButton').addEventListener('click', verificarNacionalidade);
+
+        function verificarNacionalidade(){
+            let opcaoEscolhida = document.querySelector('select#caixa-resposta').value;
+            let resposta = document.querySelector('div#resposta');
+    
+            if(opcaoEscolhida == 'BR'){
+                resposta.innerHTML = `Você é brasileiro`;
+                resposta.style.background = '#cecece';
+                resposta.style.color = '#ffffff';
+            }
+            else {
+                resposta.innerHTML = 'Você é Estrangeiro';
+                resposta.style.background = '#cecece';
+                resposta.style.color = '#ffffff';
+            }
+            
+        }
+    </script>
+</body>
+</html>
