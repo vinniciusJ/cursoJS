@@ -19,5 +19,5 @@ function carregar(){
         body.style.background = 'rgba(58, 14, 116, 0.897)';
         img.src = '_images/noite.jpg';
     }
-
+    
 }
