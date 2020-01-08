@@ -62,8 +62,6 @@ function somarArray(){
     }
     return sum;
 }
-
-
 function verificarCaixa(n){
     if(n.length == 0 || Number(n) < 1 || Number(n) > 100){
         return false;
@@ -71,4 +69,11 @@ function verificarCaixa(n){
     else{
         return true;
     }
+}
+function limpar(){
+    resDiv.innerHTML = '';
+    for(let i in numeros){
+        document.getElementsByTagName('option')[i].innerHTML = '';
+    }
+    numeros.pop();
 }
